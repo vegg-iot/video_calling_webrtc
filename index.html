@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Call</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: #121212; /* Dark background */
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 0 0 20px;
+      color: #e0e0e0;
+    }
+
+    /* Video Container */
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 700px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      background: #1f1f1f;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #localVideo {
+      border: 2px solid #4caf50; /* Highlight for local video */
+    }
+
+    #remoteVideo {
+      border: 2px solid #2196f3; /* Highlight for remote video */
+    }
+
+    /* Responsive Styles */
+    @media (min-width: 768px) {
+      .video-container {
+        flex-direction: row;
+      }
+
+      video {
+        width: calc(50% - 10px);
+      }
+    }
+
+    /* Instruction Text */
+    .instruction {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 1rem;
+      color: #b0b0b0;
+    }
+
+    /* Copy URL Bar */
+    .copy {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1f1f1f;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: #e0e0e0;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="copy">Share this URL with a friend to start a video call</div>
+  <div class="video-container">
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+  </div>
+  <div class="instruction">Ensure your camera and microphone are enabled for the best experience.</div>
+  <script src="script.js"></script>
+</body>
+</html>
